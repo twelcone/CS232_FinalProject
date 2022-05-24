@@ -7,12 +7,17 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "demo": "adb -s 2f750695 reverse tcp:5000 tcp:5000 && yarn start"
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "expo": "^45.0.4",
+    "expo-file-system": "^14.0.0",
+    "header-bar": "^2.4.3",
     "react": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-fs": "^2.20.0",
     "react-native-image-picker": "^4.8.3"
   },
   "devDependencies": {
