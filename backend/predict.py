@@ -1,15 +1,15 @@
 import pickle
 from component import *
 
-with open('/home/twel/CS232/backend/array/' + 'pred_array.pkl', 'rb') as f:
+with open('./backend/array/' + 'pred_array.pkl', 'rb') as f:
     pred_array = pickle.load(f)
-with open('/home/twel/CS232/backend/array/' + 'faiss_index.pkl', 'rb') as f:
+with open('./backend/array/' + 'faiss_index.pkl', 'rb') as f:
     faiss_index = pickle.load(f)
-with open('/home/twel/CS232/backend/array/' + 'im_indices.pkl', 'rb') as f:
+with open('./backend/array/' + 'im_indices.pkl', 'rb') as f:
     im_indices = pickle.load(f)
 
 load_model = models.resnet18().cuda()
-load_model.load_state_dict(torch.load('/home/twel/CS232/backend/CBMIR_Res18.pt'))
+load_model.load_state_dict(torch.load('./backend/CBMIR_Res18.pt'))
 
 def read_image(image_bytes):
     image = Image.open(io.BytesIO(image_bytes))
